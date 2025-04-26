@@ -1,7 +1,11 @@
+CXX = g++
+CXXFLAGS = -Wall -std=c++11
+LDFLAGS = -lws2_32
+
 all: myhttp
 
-myhttp: httpd.c
-	gcc -W -Wall -o myhttp httpd.c -lpthread
+myhttp: httpd.cpp
+	$(CXX) $(CXXFLAGS) -o myhttp httpd.cpp $(LDFLAGS)
 
 clean:
-	rm myhttp
+	del myhttp.exe
